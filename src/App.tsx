@@ -7,6 +7,7 @@ import { Page1 } from './components/pages/Page 1/Page 1';
 import { Page2WithParams } from './components/pages/Page 2/Page2WithParams';
 import Counter from './components/pages/Counter/Counter';
 import { routes } from './components/pages/SomeList/routes';
+import { OrderMain } from './components/pages/Order';
 
 const LazyPage2 = React.lazy(() => import('./components/pages/Page 2/Page2'));
 function App() {
@@ -34,6 +35,9 @@ function App() {
               <Link to={'/counter'}>Counter</Link>
             </li>
             <li>
+              <Link to={'/order'}>Order</Link>
+            </li>
+            <li>
               <Link to={'/error'}>Error</Link>
             </li>
           </ul>
@@ -49,6 +53,7 @@ function App() {
             {routes}
           </Route>
           <Route path={'/counter'} element={<Counter></Counter>}></Route>
+          <Route path={'/order'} element={<OrderMain></OrderMain>}></Route>
           <Route path={'*'} element={<span>404</span>}></Route>
         </Routes>
       </BrowserRouter>
